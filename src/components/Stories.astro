@@ -6,7 +6,10 @@ const stories = [
 ];
 ---
 
-<section id="stories" class="py-32 border-y border-white/10 bg-stone-900/40">
+<section
+    id="stories"
+    class="py-24 md:py-32 border-y border-white/10 bg-stone-900/40"
+>
     <div class="max-w-7xl mx-auto px-6">
         <div
             class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
@@ -30,23 +33,26 @@ const stories = [
             </p>
         </div>
 
-        <div class="mt-20 grid lg:grid-cols-3 gap-8">
+        <div
+            class="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
             {
                 stories.map((story, index) => (
                     <article class="group overflow-hidden rounded-[2rem] border border-white/10">
                         <div class="overflow-hidden">
                             <img
                                 src={`https://picsum.photos/600/80${index}`}
-                                class="h-80 w-full object-cover group-hover:scale-105 transition duration-700"
+                                class="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition duration-700"
+                                loading="lazy"
                             />
                         </div>
 
-                        <div class="p-8">
+                        <div class="p-6 md:p-8">
                             <div class="text-sm text-stone-500 uppercase tracking-[0.2em] mb-4">
                                 Editorial
                             </div>
 
-                            <h3 class="text-2xl font-medium leading-snug">
+                            <h3 class="text-xl sm:text-2xl font-medium leading-snug">
                                 {story}
                             </h3>
 

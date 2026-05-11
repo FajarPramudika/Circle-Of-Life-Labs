@@ -1,0 +1,31 @@
+<!-- <script>
+    import Lenis from "@studio-freight/lenis";
+    import { gsap, ScrollTrigger } from "../lib/gsap";
+
+    const lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+    });
+
+    // Integrate Lenis with GSAP ScrollTrigger to avoid conflicts
+    ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+            if (arguments.length) {
+                lenis.scrollTo(value as number);
+            }
+            return lenis.scroll;
+        },
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        }
+    });
+
+    lenis.on('scroll', () => ScrollTrigger.update());
+
+    function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script> -->

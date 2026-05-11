@@ -1,18 +1,15 @@
 <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="blur-orb w-[400px] h-[400px] bg-white top-0 right-0"></div>
 
-    <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="absolute inset-0 w-full h-full object-cover opacity-30"
-    >
-        <source
-            src="https://cdn.coverr.co/videos/coverr-making-a-leather-bag-1566547194860?download=1080p"
-            type="video/mp4"
+    <!-- Replaced video with lightweight background image -->
+    <div class="absolute inset-0">
+        <img
+            src="https://plus.unsplash.com/premium_photo-1673978423093-e54ddb60304a?q=80&w=1920&auto=format&fit=crop"
+            alt="Background visual"
+            class="w-full h-full object-cover"
+            loading="lazy"
         />
-    </video>
+    </div>
 
     <div
         class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-stone-950"
@@ -20,7 +17,7 @@
     </div>
 
     <div
-        class="container-luxury relative pt-32 grid lg:grid-cols-2 gap-20 items-center"
+        class="relative max-w-7xl mx-auto px-4 md:px-6 pt-28 md:pt-32 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
     >
         <div>
             <div
@@ -30,17 +27,19 @@
             </div>
 
             <h1
-                class="text-5xl md:text-7xl font-semibold leading-[0.95] tracking-tight max-w-3xl text-gradient"
+                class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-tight"
             >
                 Reimagining modern leather craftsmanship.
             </h1>
 
-            <p class="mt-8 text-lg text-stone-300 max-w-xl leading-relaxed">
+            <p
+                class="mt-6 md:mt-8 text-base md:text-lg text-stone-300 max-w-xl leading-relaxed"
+            >
                 Premium leather goods designed with sustainability, timeless
                 silhouettes, and tactile material experiences.
             </p>
 
-            <div class="mt-10 flex flex-wrap gap-4">
+            <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4">
                 <button
                     class="px-7 py-4 rounded-full bg-white text-black font-medium hover:-translate-y-1 transition duration-300"
                 >
@@ -55,21 +54,22 @@
             </div>
         </div>
 
-        <div class="relative hidden lg:block h-[650px]">
+        <div class="relative hidden lg:block h-[500px] xl:h-[600px]">
             <div
-                class="absolute top-0 right-0 w-[430px] h-[520px] rounded-[3rem] overflow-hidden rotate-6 hover:rotate-3 transition duration-700 shadow-2xl"
+                class="absolute top-0 right-0 w-[330px] md:w-[430px] h-[420px] md:h-[520px] rounded-[3rem] overflow-hidden hover:rotate-3 transition duration-700 shadow-2xl"
             >
                 <img
-                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
+                    src="../../public/premium_leather.png"
                     class="w-full h-full object-cover"
                     alt="Luxury leather product"
+                    loading="lazy"
                 />
             </div>
 
-            <div
+            <!-- <div
                 class="absolute left-0 bottom-0 w-[320px] rounded-[2rem] border border-white/10 bg-stone-900/80 backdrop-blur-xl p-8 shadow-2xl"
             >
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

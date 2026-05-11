@@ -28,28 +28,92 @@
                     ))
                 }
             </div>
-        </div>
 
-        <div class="grid grid-cols-2 gap-6">
-            <img
-                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
-                class="rounded-[2rem] h-80 object-cover"
-            />
+            <div class="relative mt-12 overflow-visible min-h-[760px] [perspective:1200px]">
+                <div class="absolute inset-0">
+                    <div class="absolute top-0 left-0 w-[280px] h-[380px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/10"
+                        data-speed="12"
+                        style="will-change: transform; transform: translateY(0px);"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </div>
 
-            <img
-                src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop"
-                class="rounded-[2rem] h-64 object-cover mt-20"
-            />
+                    <div class="absolute top-24 right-0 w-[320px] h-[420px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/20"
+                        data-speed="40"
+                        style="will-change: transform; transform: translateY(0px);"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </div>
 
-            <img
-                src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"
-                class="rounded-[2rem] h-64 object-cover -mt-16"
-            />
+                    <div class="absolute top-[250px] left-10 w-[260px] h-[360px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/20"
+                        data-speed="60"
+                        style="will-change: transform; transform: translateY(0px);"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </div>
 
-            <img
-                src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop"
-                class="rounded-[2rem] h-80 object-cover"
-            />
+                    <div class="absolute top-[380px] left-[36%] w-[240px] h-[320px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/20"
+                        data-speed="90"
+                        style="will-change: transform; transform: translateY(0px);"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<script type="module">
+    const initMaterialParallax = () => {
+        const container = document.querySelector('#material .relative');
+        if (!container) return;
+
+        const layers = Array.from(container.querySelectorAll('[data-speed]'));
+        let ticking = false;
+
+        const updateParallax = () => {
+            const rect = container.getBoundingClientRect();
+            const offset = rect.top / window.innerHeight;
+
+            layers.forEach((layer) => {
+                const speed = Number(layer.dataset.speed) || 0;
+                layer.style.transform = `translateY(${offset * speed}px)`;
+            });
+
+            ticking = false;
+        };
+
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        updateParallax();
+    };
+
+    if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', initMaterialParallax);
+    } else {
+        initMaterialParallax();
+    }
+</script>

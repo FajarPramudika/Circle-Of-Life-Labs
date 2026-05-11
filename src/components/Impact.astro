@@ -1,4 +1,5 @@
 ---
+import Reveal from "./Reveal.astro";
 const impacts = [
     {
         stat: "68%",
@@ -15,16 +16,32 @@ const impacts = [
 ];
 ---
 
-<section id="impact" class="py-32">
-    <div class="max-w-7xl mx-auto px-6">
+<section id="impact" class="relative py-32 overflow-hidden">
+    <!-- ATMOSPHERIC BACKGROUND -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div
+            class="absolute top-0 -left-40 w-[500px] h-[500px] rounded-full bg-white/5 blur-[140px]"
+        >
+        </div>
+
+        <div
+            class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-stone-400/5 blur-[120px]"
+        >
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="relative max-w-7xl mx-auto px-6">
         <div class="max-w-3xl">
             <div class="text-sm uppercase tracking-[0.3em] text-stone-400 mb-4">
                 Environmental Impact
             </div>
 
-            <h2 class="text-4xl md:text-6xl font-semibold leading-tight">
-                Sustainability should be measurable.
-            </h2>
+            <Reveal>
+                <h2 class="text-4xl md:text-6xl font-semibold">
+                    Sustainability should be measurable.
+                </h2>
+            </Reveal>
 
             <p class="mt-8 text-lg text-stone-300 leading-relaxed">
                 Every production decision should reduce waste, extend product
@@ -35,7 +52,7 @@ const impacts = [
         <div class="mt-20 grid md:grid-cols-3 gap-8">
             {
                 impacts.map((item) => (
-                    <div class="rounded-[2rem] border border-white/10 bg-white/[0.03] p-10">
+                    <div class="rounded-[2rem] border border-white/10 bg-white/[0.03] backdrop-blur-sm p-10">
                         <div class="text-6xl font-semibold">{item.stat}</div>
 
                         <p class="mt-5 text-stone-400 text-lg leading-relaxed">
