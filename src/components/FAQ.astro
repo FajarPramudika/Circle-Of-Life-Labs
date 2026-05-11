@@ -1,0 +1,50 @@
+---
+const faqs = [
+    {
+        q: "What materials are used?",
+        a: "Premium engineered materials focused on durability and sustainability.",
+    },
+    {
+        q: "How long does shipping take?",
+        a: "Orders are processed within a few business days.",
+    },
+    {
+        q: "Do you offer returns?",
+        a: "Returns are available within the stated return period.",
+    },
+];
+---
+
+<section id="faq" class="py-32">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center">
+            <div class="text-sm uppercase tracking-[0.3em] text-stone-400 mb-4">
+                Frequently Asked Questions
+            </div>
+
+            <h2 class="text-4xl md:text-6xl font-semibold">
+                Everything customers usually ask.
+            </h2>
+        </div>
+
+        <div class="mt-20 space-y-6">
+            {
+                faqs.map((faq) => (
+                    <details class="group rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
+                        <summary class="cursor-pointer list-none flex items-center justify-between text-xl font-medium">
+                            {faq.q}
+
+                            <span class="group-open:rotate-45 transition">
+                                +
+                            </span>
+                        </summary>
+
+                        <p class="mt-6 text-stone-400 leading-relaxed text-lg">
+                            {faq.a}
+                        </p>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>

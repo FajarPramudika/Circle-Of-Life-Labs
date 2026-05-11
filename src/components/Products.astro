@@ -1,0 +1,79 @@
+---
+const products = [
+    {
+        title: "Minimal Everyday Tote",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+        title: "Structured Carry Bag",
+        image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+        title: "Travel Utility Pouch",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
+    },
+];
+---
+
+<section id="products" class="py-32 bg-stone-900/40 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div
+            class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
+        >
+            <div>
+                <div
+                    class="text-sm uppercase tracking-[0.3em] text-stone-400 mb-4"
+                >
+                    Product Collection
+                </div>
+
+                <h2
+                    class="text-4xl md:text-6xl font-semibold leading-tight max-w-3xl"
+                >
+                    Modern essentials with refined craftsmanship.
+                </h2>
+            </div>
+
+            <button
+                class="px-6 py-3 rounded-full border border-white/15 hover:bg-white hover:text-black transition duration-300"
+            >
+                View Collection
+            </button>
+        </div>
+
+        <div class="mt-20 grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {
+                products.map((product) => (
+                    <article class="group rounded-[2rem] overflow-hidden border border-white/10 bg-black/20">
+                        <div class="overflow-hidden">
+                            <img
+                                src={product.image}
+                                alt={product.title}
+                                class="h-[420px] w-full object-cover group-hover:scale-110 transition duration-700"
+                            />
+                        </div>
+
+                        <div class="p-8">
+                            <div class="flex items-center justify-between gap-6">
+                                <div>
+                                    <h3 class="text-2xl font-medium">
+                                        {product.title}
+                                    </h3>
+
+                                    <p class="mt-3 text-stone-400 leading-relaxed">
+                                        Crafted with tactile textures and
+                                        timeless modern detailing.
+                                    </p>
+                                </div>
+
+                                <div class="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white group-hover:text-black transition duration-300">
+                                    →
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>

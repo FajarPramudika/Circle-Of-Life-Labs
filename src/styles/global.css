@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+    color-scheme: dark;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: #0c0a09;
+    color: #fafaf9;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: white;
+    color: black;
+}
+
+.blur-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.text-gradient {
+    background: linear-gradient(to bottom, white, #a8a29e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

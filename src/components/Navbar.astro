@@ -1,0 +1,39 @@
+---
+const links = [
+    { label: "Material", href: "#material" },
+    { label: "Products", href: "#products" },
+    { label: "Impact", href: "#impact" },
+    { label: "Stories", href: "#stories" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Contact", href: "#contact" },
+];
+---
+
+<header
+    class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-stone-950/70 backdrop-blur-xl"
+>
+    <div class="container-luxury py-5 flex items-center justify-between">
+        <a href="/" class="text-sm font-semibold tracking-[0.35em] uppercase">
+            MYLOUN
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm text-stone-300">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.href}
+                        class="hover:text-white transition duration-300"
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <button
+            class="px-5 py-2 rounded-full bg-white text-black text-sm font-medium hover:scale-105 transition duration-300"
+        >
+            Shop Collection
+        </button>
+    </div>
+</header>

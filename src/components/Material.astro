@@ -1,0 +1,55 @@
+<section id="material" class="py-32 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+        <div>
+            <div class="text-sm uppercase tracking-[0.3em] text-stone-400 mb-4">
+                Material Innovation
+            </div>
+
+            <h2 class="text-4xl md:text-6xl font-semibold leading-tight">
+                Designed for longevity. Built with responsibility.
+            </h2>
+
+            <p class="mt-8 text-stone-300 leading-relaxed text-lg">
+                The material philosophy focuses on tactile finishes, premium
+                texture, durability, and environmentally conscious sourcing.
+            </p>
+
+            <div class="mt-10 grid sm:grid-cols-2 gap-6">
+                {
+                    [
+                        "Low-impact sourcing",
+                        "High durability finish",
+                        "Minimal waste production",
+                        "Modern tactile texture",
+                    ].map((item) => (
+                        <div class="border border-white/10 rounded-3xl p-6 bg-white/[0.03] hover:bg-white/[0.06] transition duration-300">
+                            <div class="text-xl font-medium">{item}</div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+            <img
+                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
+                class="rounded-[2rem] h-80 object-cover"
+            />
+
+            <img
+                src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop"
+                class="rounded-[2rem] h-64 object-cover mt-20"
+            />
+
+            <img
+                src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"
+                class="rounded-[2rem] h-64 object-cover -mt-16"
+            />
+
+            <img
+                src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop"
+                class="rounded-[2rem] h-80 object-cover"
+            />
+        </div>
+    </div>
+</section>

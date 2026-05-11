@@ -1,0 +1,62 @@
+---
+const stories = [
+    "How modern leather goods are evolving",
+    "Why sustainable materials matter in fashion",
+    "Designing products for long-term ownership",
+];
+---
+
+<section id="stories" class="py-32 border-y border-white/10 bg-stone-900/40">
+    <div class="max-w-7xl mx-auto px-6">
+        <div
+            class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8"
+        >
+            <div>
+                <div
+                    class="text-sm uppercase tracking-[0.3em] text-stone-400 mb-4"
+                >
+                    Stories
+                </div>
+
+                <h2
+                    class="text-4xl md:text-6xl font-semibold leading-tight max-w-3xl"
+                >
+                    The intersection of craftsmanship and modern culture.
+                </h2>
+            </div>
+
+            <p class="max-w-xl text-stone-300 text-lg leading-relaxed">
+                Editorial content, product journeys, and material storytelling.
+            </p>
+        </div>
+
+        <div class="mt-20 grid lg:grid-cols-3 gap-8">
+            {
+                stories.map((story, index) => (
+                    <article class="group overflow-hidden rounded-[2rem] border border-white/10">
+                        <div class="overflow-hidden">
+                            <img
+                                src={`https://picsum.photos/600/80${index}`}
+                                class="h-80 w-full object-cover group-hover:scale-105 transition duration-700"
+                            />
+                        </div>
+
+                        <div class="p-8">
+                            <div class="text-sm text-stone-500 uppercase tracking-[0.2em] mb-4">
+                                Editorial
+                            </div>
+
+                            <h3 class="text-2xl font-medium leading-snug">
+                                {story}
+                            </h3>
+
+                            <button class="mt-8 text-stone-300 hover:text-white transition">
+                                Read Story →
+                            </button>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>
