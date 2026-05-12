@@ -4,6 +4,11 @@ const stories = [
     "Why sustainable materials matter in fashion",
     "Designing products for long-term ownership",
 ];
+const images = [
+    "../../public/kelapa_tua.webp",
+    "../../public/selulosa_mikrobial.webp",
+    "../../public/craft_leather.webp",
+]
 ---
 
 <section
@@ -24,7 +29,7 @@ const stories = [
                 <h2
                     class="text-4xl md:text-6xl font-semibold leading-tight max-w-3xl"
                 >
-                    The intersection of craftsmanship and modern culture.
+                    Where biology meets the art of craft.
                 </h2>
             </div>
 
@@ -41,7 +46,7 @@ const stories = [
                     <article class="group overflow-hidden rounded-[2rem] border border-white/10">
                         <div class="overflow-hidden">
                             <img
-                                src={`https://picsum.photos/600/80${index}`}
+                                src={`../../public/storyimg${index}.webp`}
                                 class="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition duration-700"
                                 loading="lazy"
                             />

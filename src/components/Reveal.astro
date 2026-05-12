@@ -24,7 +24,7 @@ const { delay = 0 } = Astro.props;
                 }
             });
         },
-        { threshold: 0.01 }
+        { threshold: 0.1 }
     );
     reveals.forEach((el) => observer.observe(el));
 </script>

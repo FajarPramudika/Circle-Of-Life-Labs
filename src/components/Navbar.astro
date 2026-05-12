@@ -1,4 +1,6 @@
 ---
+import { gsap } from '../lib/gsap';
+
 const links = [
     { label: "Material", href: "#material" },
     { label: "Products", href: "#products" },
@@ -7,6 +9,8 @@ const links = [
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
 ];
+
+let isOpen = false;
 ---
 
 <header
@@ -43,9 +47,84 @@ const links = [
 
         <!-- MOBILE BUTTON -->
         <button
+            id="mobile-btn"
             class="md:hidden w-10 h-10 rounded-full border border-white/10 flex items-center justify-center"
+            onclick="toggleMenu()"
         >
             ☰
         </button>
     </div>
+
+    <!-- MOBILE MENU -->
+    <div
+        id="mobile-menu"
+        class="md:hidden fixed top-full right-0 w-64 h-screen bg-stone-950/95 backdrop-blur-xl border-l border-white/10 transform translate-x-full transition-transform duration-500 ease-in-out"
+    >
+        <nav class="flex flex-col gap-6 p-8 text-stone-300">
+            {
+                links.map((link, index) => (
+                    <div class="flex items-center">
+                        <div class="relative w-4 h-4 mr-4 flex items-center justify-center">
+                            <span
+                                class="mobile-line absolute w-0.25 h-4 bg-white transform origin-center"
+                                style={`transform: rotate(0deg);`}
+                            ></span>
+                            <span
+                                class="mobile-line2 absolute w-0.25 h-4 bg-white transform origin-center"
+                                style={`transform: rotate(0deg);`}
+                            ></span>
+                        </div>
+                        <a
+                            href={link.href}
+                            class="hover:text-white transition duration-300 text-lg"
+                            onclick="toggleMenu()"
+                        >
+                            {link.label}
+                        </a>
+                    </div>
+                ))
+            }
+        </nav>
+    </div>
 </header>
+
+<script>
+    import { gsap } from '../lib/gsap';
+
+    let isOpen = false;
+
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const lines = document.querySelectorAll('.mobile-line');
+        const lines2 = document.querySelectorAll('.mobile-line2');
+        isOpen = !isOpen;
+
+        if (isOpen) {
+            gsap.to(menu, { x: 0, duration: 0.3, ease: 'power2.out' });
+            gsap.fromTo(lines, 
+                { rotation: 0 }, 
+                { rotation: 45, duration: 0.3, delay: 0.1, stagger: 0.1, ease: 'power2.out' }
+            );
+            gsap.fromTo(lines2, 
+                { rotation: 0 }, 
+                { rotation: -45, duration: 0.3, delay: 0.1, stagger: 0.1, ease: 'power2.out' }
+            );
+        } else {
+            gsap.to(menu, { x: '100%', duration: 0.3, ease: 'power2.in' });
+            gsap.to(lines, { rotation: 0, duration: 0.3, stagger: 0.1, ease: 'power2.in' });
+            gsap.to(lines2, { rotation: 0, duration: 0.3, stagger: 0.1, ease: 'power2.in' });
+        }
+    }
+
+    // Expose toggleMenu to global scope
+    (window as any).toggleMenu = toggleMenu;
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById('mobile-btn');
+        if (isOpen && menu && btn && !menu.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+            toggleMenu();
+        }
+    });
+</script>

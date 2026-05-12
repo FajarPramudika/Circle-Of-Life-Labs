@@ -1,0 +1,109 @@
+---
+const text = "Circle Of Life Labs . ";
+const repeated = text.repeat(2);
+---
+
+<div class="section">
+    <div class="wrapper">
+        <div class="circle" id="circleText">
+            {
+                repeated.split("").map((char, i) => (
+                    <span
+                        style={`transform: rotate(${i * 8.135}deg) translateY(-140px);`}
+                        >
+                            <span class="char">{char}</span>
+                        </span>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    const circle = document.getElementById("circleText");
+
+    let current = 0;
+    let target = 0;
+
+    window.addEventListener("scroll", () => {
+        target = window.scrollY * 0.2;
+    })
+
+    function animate(){
+        current += (target - current) * 0.08;
+
+        circle.style.transform = `
+            translate(-50%, -50%)
+            rotate(${current}deg)
+        `;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+</script>
+
+<style>
+    .section{
+        height: fit-content;
+        background: black;
+        position:relative;
+        display: inline;
+    }
+
+    .circle-wrapper{
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        pointer-events: none;
+    }
+
+    .circle{
+        --size: 400px;
+        --radius: calc(var(--size) / 2 -20px);
+
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: var(--size);
+        height: var(--size);
+
+        border-radius: 50%;
+
+        will-change: transform;
+
+        transform: 
+        translate(-50%, -50%)
+        rotate(0deg);
+    }
+
+    .circle span{
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        width: 0;
+        height: 0;
+    }
+
+    .char{
+        display: block;
+
+        transform: translateY(calc(var(--radius) * -1));
+
+        color: rgb(185, 136, 21); 
+        /* 185, 136, 21 coklat */
+        font-size: 20px;
+        font-weight: bold;
+
+        white-space: pre;
+    }
+</style>

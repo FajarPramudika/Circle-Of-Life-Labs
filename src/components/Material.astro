@@ -1,32 +1,40 @@
+---
+import CircularText from "./CircularText.astro"
+---
+
 <section id="material" class="py-32 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center" >
         <div>
+            <CircularText/>
             <div class="text-sm uppercase tracking-[0.3em] text-stone-400 mb-4">
                 Material Innovation
             </div>
-
+            
             <h2 class="text-4xl md:text-6xl font-semibold leading-tight">
-                Designed for longevity. Built with responsibility.
+                Nature's Waste. Timeless Grace. Built with integrity.
             </h2>
-
+            
             <p class="mt-8 text-stone-300 leading-relaxed text-lg">
-                The material philosophy focuses on tactile finishes, premium
-                texture, durability, and environmentally conscious sourcing.
+                Our material philosophy transform discarded mature coconut water
+                high-performance bioleather. By marrying biotechnology with traditional
+                craftsmanship, we create a durable, circular alternative that honors the
+                earth without compromising on premium quality. 
             </p>
-
+            
             <div class="mt-10 grid sm:grid-cols-2 gap-6">
                 {
                     [
-                        "Low-impact sourcing",
-                        "High durability finish",
-                        "Minimal waste production",
-                        "Modern tactile texture",
+                        "Coconut Waste Valorization",
+                        "Microbal Fiber Strength",
+                        "100% Bio-based Process",
+                        "Authentic Vegan Patina",
                     ].map((item) => (
                         <div class="border border-white/10 rounded-3xl p-6 bg-white/[0.03] hover:bg-white/[0.06] transition duration-300">
                             <div class="text-xl font-medium">{item}</div>
                         </div>
                     ))
                 }
+                
             </div>
 
             <div class="relative mt-12 overflow-visible min-h-[760px] [perspective:1200px]">
@@ -36,46 +44,49 @@
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
+                            src="../../public/jam.webp"    
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
                     </div>
 
                     <div class="absolute top-24 right-0 w-[320px] h-[420px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/20"
-                        data-speed="40"
+                        data-speed="75"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1200&auto=format&fit=crop"
+                            src="../../public/dompet_hitam.webp"
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
                     </div>
 
                     <div class="absolute top-[250px] left-10 w-[260px] h-[360px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/20"
-                        data-speed="60"
+                        data-speed="100"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"
+                        src="../../public/dompet_coklat.webp"
+                            
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
                     </div>
 
                     <div class="absolute top-[380px] left-[36%] w-[240px] h-[320px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-black/20"
-                        data-speed="90"
+                        data-speed="150"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1200&auto=format&fit=crop"
+                            src="../../public/clutch_bag.webp"
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
                     </div>
                 </div>
+                
             </div>
+            
         </div>
     </div>
 </section>

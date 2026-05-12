@@ -1,16 +1,19 @@
 ---
 const products = [
     {
-        title: "Minimal Everyday Tote",
-        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop",
+        title: "Black Bioleather",
+        image: "../../public/bioleather_black.webp",
+        description: "Minimalist matte black finish designed for modern products and premium aesthetics.",
     },
     {
-        title: "Structured Carry Bag",
-        image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=1200&auto=format&fit=crop",
+        title: "Darkbrown Bioleather",
+        image: "../../public/bioleather_darkbrown.webp",
+        description: "Deep dark brown tone with natural floor texture for a warm and elegant appearance.",
     },
     {
-        title: "Travel Utility Pouch",
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
+        title: "Red Bioleather",
+        image: "../../public/bioleather_red.webp",
+        description: "Bold crimson red surface with rich texture that creates a luxurious visual identity.",
     },
 ];
 ---
@@ -30,7 +33,7 @@ const products = [
                 <h2
                     class="text-4xl md:text-6xl font-semibold leading-tight max-w-3xl"
                 >
-                    Modern essentials with refined craftsmanship.
+                    Turning agricultural waste into everyday elegance.
                 </h2>
             </div>
 
@@ -65,8 +68,7 @@ const products = [
                                     </h3>
 
                                     <p class="mt-3 text-sm md:text-base text-stone-400 leading-relaxed">
-                                        Crafted with tactile textures and
-                                        timeless modern detailing.
+                                        {product.description}
                                     </p>
                                 </div>
 
