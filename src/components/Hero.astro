@@ -1,3 +1,7 @@
+---
+import { getImageUrl } from "../lib/imageUrl"
+---
+
 <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="blur-orb w-[400px] h-[400px] bg-white top-0 right-0"></div>
 
@@ -59,7 +63,7 @@
                 class="absolute top-0 right-0 w-[330px] md:w-[430px] h-[420px] md:h-[520px] rounded-[3rem] overflow-hidden hover:rotate-3 transition duration-700 shadow-2xl"
             >
                 <img
-                    src="../Circle-Of-Life-Labs/cover.webp"
+                    src={getImageUrl('cover.webp')}
                     class="w-full h-full object-cover"
                     alt="Luxury leather product"
                     loading="lazy"

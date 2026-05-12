@@ -1,13 +1,15 @@
 ---
+import { getImageUrl } from "../lib/imageUrl"
+
 const stories = [
     "How modern leather goods are evolving",
     "Why sustainable materials matter in fashion",
     "Designing products for long-term ownership",
 ];
 const images = [
-    "../../public/kelapa_tua.webp",
-    "../../public/selulosa_mikrobial.webp",
-    "../../public/craft_leather.webp",
+    "kelapa_tua.webp",
+    "selulosa_mikrobial.webp",
+    "craft_leather.webp",
 ]
 ---
 
@@ -46,7 +48,7 @@ const images = [
                     <article class="group overflow-hidden rounded-[2rem] border border-white/10">
                         <div class="overflow-hidden">
                             <img
-                                src={`../../public/storyimg${index}.webp`}
+                                src={getImageUrl(`storyimg${index}.webp`)}
                                 class="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition duration-700"
                                 loading="lazy"
                             />

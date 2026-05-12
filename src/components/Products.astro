@@ -1,18 +1,20 @@
 ---
+import { getImageUrl } from "../lib/imageUrl"
+
 const products = [
     {
         title: "Black Bioleather",
-        image: "../../public/bioleather_black.webp",
+        image: "bioleather_black.webp",
         description: "Minimalist matte black finish designed for modern products and premium aesthetics.",
     },
     {
         title: "Darkbrown Bioleather",
-        image: "../../public/bioleather_darkbrown.webp",
+        image: "bioleather_darkbrown.webp",
         description: "Deep dark brown tone with natural floor texture for a warm and elegant appearance.",
     },
     {
         title: "Red Bioleather",
-        image: "../../public/bioleather_red.webp",
+        image: "bioleather_red.webp",
         description: "Bold crimson red surface with rich texture that creates a luxurious visual identity.",
     },
 ];
@@ -52,7 +54,7 @@ const products = [
                     <article class="group rounded-[2rem] overflow-hidden border border-white/10 bg-black/20">
                         <div class="relative overflow-hidden">
                             <img
-                                src={product.image}
+                                src={getImageUrl(product.image)}
                                 class="h-[320px] md:h-[420px] w-full object-cover group-hover:scale-[1.03] transition duration-1000 ease-out"
                                 loading="lazy"
                             />

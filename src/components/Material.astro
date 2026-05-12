@@ -1,5 +1,6 @@
 ---
 import CircularText from "./CircularText.astro"
+import { getImageUrl } from "../lib/imageUrl"
 ---
 
 <section id="material" class="py-32 border-t border-white/10">
@@ -44,7 +45,7 @@ import CircularText from "./CircularText.astro"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="../../public/jam.webp"    
+                            src={getImageUrl('jam.webp')}
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
@@ -55,7 +56,7 @@ import CircularText from "./CircularText.astro"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="../../public/dompet_hitam.webp"
+                            src={getImageUrl('dompet_hitam.webp')}
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
@@ -66,8 +67,7 @@ import CircularText from "./CircularText.astro"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                        src="../../public/dompet_coklat.webp"
-                            
+                            src={getImageUrl('dompet_coklat.webp')}
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
@@ -78,7 +78,7 @@ import CircularText from "./CircularText.astro"
                         style="will-change: transform; transform: translateY(0px);"
                     >
                         <img
-                            src="../../public/clutch_bag.webp"
+                            src={getImageUrl('clutch_bag.webp')}
                             class="w-full h-full object-cover"
                             loading="lazy"
                         />
